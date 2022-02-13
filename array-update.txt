@@ -13,3 +13,7 @@
 - 5b: db.post.updateOne({title:'Masai 101'},{$pop:{tags:1}})
 
 - 6: db.post.updateOne({title:'Masai 102'},{$addToSet:{tags:{$each:['camera','1000','accessories','mongo','web']}}})
+
+- 7: db.users.insertMany([{name:'Abhinav',scores:[30,50,70]},{name:'Sahil',scores:[60,80,90]}])
+
+- 8: db.users.updateOne({name:'Abhinav'},{$push:{scores:{$each:[120,100,85],$sort:-1,$slice:3}}})
