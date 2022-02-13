@@ -1,0 +1,15 @@
+# Queries
+
+- 1:  db.post.updateOne({title:'Masai 101'},{$push:{tags:'102'}})
+
+- 2:  db.post.updateOne({title:'Masai 101'},{$push:{tags:{$each:['102','103']}}})
+
+- 3: db.post.updateMany({},{$pull:{tags:'101'}})
+
+- 4: db.post.updateMany({},{$pull:{tags:{$in:['102','programming']}}})
+
+- 5a:  db.post.updateOne({title:'Masai 101'},{$pop:{tags:-1}})
+
+- 5b: db.post.updateOne({title:'Masai 101'},{$pop:{tags:1}})
+
+- 6: db.post.updateOne({title:'Masai 102'},{$addToSet:{tags:{$each:['camera','1000','accessories','mongo','web']}}})
